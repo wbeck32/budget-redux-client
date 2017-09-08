@@ -4,3 +4,7 @@ import PropTypes from 'prop-types';
 export default function TransactionContainer(){
 return (<div> TransactionContainer </div>);
 }
+
+export default connect(state => ({
+
+}))(TransactionContainer);

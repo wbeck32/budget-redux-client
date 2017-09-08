@@ -1,14 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { createLogger } from 'redux-logger';
 import './index.css';
-import App from './containers/App';
+import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-// import greeter from './greeter.reducer';
+import auth from './auth/auth.reducer';
+
+const middleware = [thunk];
+if (process.env.NODE_ENV !== 'production') {
+  middleware.push(createLogger());
+}
 
 const store = createStore(
-  // greeter,
+  auth,
+  applyMiddleware(...middleware),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

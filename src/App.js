@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
-import '../App.css';
-import SignInUp from '../components/SignInUp';
-import CategoryContainer from './CategoryContainer';
-import EditContainer from './EditContainer';
-import TransactionContainer from './TransactionContainer';
+import logo from './logo.svg';
+import './App.css';
+import { Router, Route } from 'react-router';
+import SignInUp from './auth/SignInUp';
+import CategoryContainer from './categories/CategoryContainer';
+import EditContainer from './editing/EditContainer';
+import TransactionContainer from './transactions/TransactionContainer';
 
 class App extends Component {
+
+
+
   render() {
     return (
       <div className="App">
@@ -14,6 +18,10 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
+
+        {/* <Router>
+    <Route />
+  </Router> */}
 
         <SignInUp />
         <CategoryContainer />
@@ -25,4 +33,4 @@ class App extends Component {
   }
 }
 
-export default App;
+
