@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Router, Route } from 'react-router';
-import SignInUp from './auth/SignInUp';
+// import { Router, Route } from 'react-router';
+import AuthContainer from './auth/AuthContainer';
 import CategoryContainer from './categories/CategoryContainer';
 import EditContainer from './editing/EditContainer';
 import TransactionContainer from './transactions/TransactionContainer';
 
 class App extends Component {
-
-
-
   render() {
     return (
       <div className="App">
@@ -19,18 +16,12 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
 
-        {/* <Router>
-    <Route />
-  </Router> */}
-
-        <SignInUp />
+        <AuthContainer />
         <CategoryContainer />
         <EditContainer />
         <TransactionContainer />
-
       </div>
     );
   }
 }
-
-
+export default App;
