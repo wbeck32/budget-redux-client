@@ -18,15 +18,11 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ signUp }, dispatch);
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//       signUp: (email, password) => dispatch(signUp(email, password))
-//   };
-// };
 
 const mapStateToProps = state => {
   return {
-    signUp: state.signUp
+    signUp: state.signUp,
+    authorized: state.authorized
   }
 };
 

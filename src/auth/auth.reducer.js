@@ -1,13 +1,18 @@
-import { SIGN_UP, VERIFY, SIGN_IN, AUTH_FAILURE } from './auth.constants';
-
-// const initialState = {
-//   authorized: false
-// }
+import {
+  SIGN_UP,
+  VERIFY,
+  SIGN_IN,
+  AUTHORIZED,
+  AUTH_FAILURE
+} from './auth.constants';
 
 export default (state = {}, { type, payload }) => {
   switch (type) {
     case SIGN_UP:
       console.log('sign up: ', state, payload);
+      return payload;
+    case AUTHORIZED:
+      console.log('authorized: ', state, payload);
       return payload;
     case SIGN_IN:
       console.log('sign in: ', state);
