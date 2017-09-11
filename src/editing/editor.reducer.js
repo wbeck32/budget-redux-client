@@ -1,6 +1,7 @@
 import { SAVE_CAT_CHANGES, SAVE_SUBCAT_CHANGES } from './editor.constants';
 
-export function editReducer(state = {  }, { type, payload }) {
+export function editorReducer(state = null, { type, payload }) {
+  console.log(state, type, payload)
   switch (type) {
     case SAVE_CAT_CHANGES:
       console.log('save cat changes: ', state, payload);
@@ -10,6 +11,6 @@ export function editReducer(state = {  }, { type, payload }) {
       return payload;
     default:
       console.log('default: ', state, payload);
-      return payload;
+      return state;
   }
 }
