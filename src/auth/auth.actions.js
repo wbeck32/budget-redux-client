@@ -11,7 +11,7 @@ export function signUp({ type, payload }) {
           dispatch({ type: AUTHORIZED, payload: authorized });
         },
         error => {
-          dispatch({ type: AUTH_FAILURE, payload: error.error });
+          dispatch({ type: AUTH_FAILURE, payload: error.status });
         }
       );
     };
