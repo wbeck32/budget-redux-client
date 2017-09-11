@@ -1,24 +1,21 @@
-import { SIGN_UP, VERIFY, SIGN_IN, AUTHORIZED, AUTH_FAILURE } from './auth.constants';
+import { SIGN_UP, SIGN_IN, AUTHORIZED, AUTH_FAILURE, VERIFY } from './auth.constants';
 
-export function authReducer(state = { authorized: false }, { type, payload }) {
-  switch (type) {
-    case SIGN_UP:
-      console.log('sign up: ', state, payload);
-      return payload;
+ export default function authReducer(state = null, { type, payload }) {
+    switch (type) {
     case SIGN_IN:
-      console.log('sign in: ', state, payload);
-      return state;
+      return null;
     case AUTHORIZED:
-      console.log('authorized: ', state, payload);
-      return (state.authorized = true);
+      return payload;
     case AUTH_FAILURE:
-      console.log('auth failure: ', state, payload);
-      return (state.authorized = false);
-    case VERIFY:
-      console.log('verify: ', state, payload);
-      return (state.authorized = true);
+      // console.log('auth failure: ', state, payload);
+      return (null);
     default:
-      console.log('default: ', state, payload);
+      // console.log('default: ', state, payload);
       return state;
   }
-};
+}
+
+
+// case SIGN_UP:
+// console.log('sign up: ', state, payload);
+// return payload;

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import { connect } from 'react-redux';
+
 import './App.css';
 // import { Router, Route } from 'react-router';
 import AuthContainer from './auth/AuthContainer';
@@ -16,6 +18,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <AuthContainer />
+        token: {this.props.token}
         <EditorContainer />
         <CategoryContainer />
         <TransactionContainer />
@@ -23,4 +26,13 @@ class App extends Component {
     );
   }
 }
-export default App;
+
+const mapStateToProps = state => {
+  return {
+    token: state.token
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null)(App);

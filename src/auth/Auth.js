@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { SIGN_UP, SIGN_IN } from './auth.constants';
 
-export default function Auth({ signUp, signIn }) {
+export default function Auth({ signUp, signInUser }) {
 
   Auth.propTypes = {
     email: PropTypes.string,
     password: PropTypes.string,
     signUp: PropTypes.func,
-    signIn: PropTypes.func
+    signInUser: PropTypes.func
   };
 
   return (
@@ -37,7 +37,7 @@ export default function Auth({ signUp, signIn }) {
           event.preventDefault();
           const form = event.target;
           const { email, password } = form.elements;
-          signIn({
+          signInUser({
             type: SIGN_IN,
             payload: { email: email.value, password: password.value }
           });

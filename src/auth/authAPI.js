@@ -15,9 +15,17 @@ export default {
     return req
     .post(`${AUTH_API_URL}/signin`)
     .send(payload)
-    .then(signedInUser => {
-      return signedInUser
+    .then(response => {
+      return response.body
     })
+  },
+    verify() {
+      return req
+      .get(`${AUTH_API_URL}/verify`)
+      .then(verifiedUser => {
+        return verifiedUser
+      })
+
   }
 };
 
