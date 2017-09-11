@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SIGN_UP } from './auth.constants';
+import { SIGN_UP, SIGN_IN } from './auth.constants';
 
-export default function Auth({ signUp }) {
+export default function Auth({ signUp, signIn }) {
 
   Auth.propTypes = {
     email: PropTypes.string,
@@ -12,7 +12,7 @@ export default function Auth({ signUp }) {
 
   return (
     <div>
-      <div> Auth </div>
+      <div> Sign Up </div>
       <form
         onSubmit={event => {
           event.preventDefault();
@@ -25,6 +25,24 @@ export default function Auth({ signUp }) {
           form.reset();
         }}>
         <input type="text" name="name" placeholder="name" />
+
+        <input type="text" name="email" placeholder="email" />
+        <input type="text" name="password" placeholder="password" />
+        <button type="submit" name="submit" />
+      </form>
+
+      <div> Sign In </div>
+      <form
+        onSubmit={event => {
+          event.preventDefault();
+          const form = event.target;
+          const { email, password } = form.elements;
+          signIn({
+            type: SIGN_IN,
+            payload: { email: email.value, password: password.value }
+          });
+          form.reset();
+        }}>
 
         <input type="text" name="email" placeholder="email" />
         <input type="text" name="password" placeholder="password" />

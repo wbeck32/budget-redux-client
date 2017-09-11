@@ -10,6 +10,14 @@ export default {
       .then(newUser => {
         return newUser
       })
+  },
+  signIn({payload}) {
+    return req
+    .post(`${AUTH_API_URL}/signin`)
+    .send(payload)
+    .then(signedInUser => {
+      return signedInUser
+    })
   }
 };
 
