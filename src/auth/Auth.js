@@ -7,7 +7,8 @@ export default function Auth({ signUp, signIn }) {
   Auth.propTypes = {
     email: PropTypes.string,
     password: PropTypes.string,
-    signUp: PropTypes.func
+    signUp: PropTypes.func,
+    signIn: PropTypes.func
   };
 
   return (
@@ -25,7 +26,6 @@ export default function Auth({ signUp, signIn }) {
           form.reset();
         }}>
         <input type="text" name="name" placeholder="name" />
-
         <input type="text" name="email" placeholder="email" />
         <input type="text" name="password" placeholder="password" />
         <button type="submit" name="submit" />
@@ -43,7 +43,6 @@ export default function Auth({ signUp, signIn }) {
           });
           form.reset();
         }}>
-
         <input type="text" name="email" placeholder="email" />
         <input type="text" name="password" placeholder="password" />
         <button type="submit" name="submit" />

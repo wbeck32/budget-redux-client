@@ -7,7 +7,7 @@ import { createLogger } from 'redux-logger';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import auth from './auth/auth.reducer';
+import rootReducer from './helpers/rootReducer';
 
 const middleware = [thunk];
 if (process.env.NODE_ENV !== 'production') {
@@ -15,7 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const store = createStore(
-  auth,
+  rootReducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     applyMiddleware(thunk)
 

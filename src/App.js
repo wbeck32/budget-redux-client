@@ -4,7 +4,7 @@ import './App.css';
 // import { Router, Route } from 'react-router';
 import AuthContainer from './auth/AuthContainer';
 import CategoryContainer from './categories/CategoryContainer';
-import EditContainer from './editing/EditContainer';
+import EditorContainer from './editing/EditorContainer';
 import TransactionContainer from './transactions/TransactionContainer';
 
 class App extends Component {
@@ -15,10 +15,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-
         <AuthContainer />
+        <EditorContainer />
         <CategoryContainer />
-        <EditContainer />
         <TransactionContainer />
       </div>
     );
