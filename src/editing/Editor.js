@@ -12,7 +12,6 @@ export default function Editor({createNewCat, createNewSubcat,saveCatChanges, sa
     token: PropTypes.String
   }
 
-  console.log('in editor: ',typeof createNewCat, token)
 return (
   <div>
     Create new category

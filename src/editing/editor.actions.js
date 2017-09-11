@@ -1,11 +1,8 @@
-import { VERIFY, CREATE_NEW_CAT } from './editor.constants';
 import editorAPI from './editorAPI';
 
-export async function createNewCat({ type, payload }) {
-  const v = await editorAPI.verifyUser();
-  console.log('v: ', v);
+export function createNewCat({ type, payload }) {
+
   return function(dispatch) {
-    // dispatch({ type: VERIFY });
 
     return editorAPI
       .createNewCat({ payload })
