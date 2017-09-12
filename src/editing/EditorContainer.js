@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import {
   createNewCat,
   createNewSubcat,
@@ -25,6 +26,10 @@ EditorContainer.propTypes = {
   createNewSubcat: PropTypes.func
 };
 
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ createNewCat, createNewSubcat, saveCatChanges, saveSubcatChanges }, dispatch);
+}
+
 const mapStateToProps = state => {
   return {
     token: state.token
@@ -33,10 +38,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { createNewCat, createNewSubcat, saveCatChanges, saveSubcatChanges }
-  // merge Props
-  // (stateProps, dispatchProps, ownProps) => {
-  //   // derive the data here
-  //   console.log(stateProps, dispatchProps, ownProps);
-  // }
+  mapDispatchToProps
 )(Editor);
