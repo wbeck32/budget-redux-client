@@ -11,14 +11,12 @@ import TransactionContainer from './transactions/TransactionContainer';
 
 class App extends Component {
   static propTypes = {
-    token: PropTypes.string
-  }
+    token: PropTypes.string,
+    categories: PropTypes.array,
+    getMyCats: PropTypes.func
+  };
 
-  constructor(props) {
-    super(props);
-    this.props = {
-      token: null
-    };
+componentDidMount() {
   }
 
   render() {
@@ -29,16 +27,26 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         {!this.props.token && <AuthContainer />}
-        token: {this.props.token}
         <div>
-       {this.props.token &&
-       <div> <EditorContainer /></div>}
-       {this.props.token &&
-       <div> <CategoryContainer /></div>}
-       {this.props.token &&
-       <div> <TransactionContainer /></div>
-       }
-       </div>
+          {this.props.token && (
+            <div>
+              {' '}
+              <EditorContainer />
+            </div>
+          )}
+          {this.props.token && (
+            <div>
+              {' '}
+              <CategoryContainer />
+            </div>
+          )}
+          {this.props.token && (
+            <div>
+              {' '}
+              <TransactionContainer />
+            </div>
+          )}
+        </div>
       </div>
     );
   }
@@ -46,10 +54,9 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    token: state.token
+    token: state.token,
+    categories: state.categories
   };
 };
 
-export default connect(
-  mapStateToProps,
-  null)(App);
+export default connect(mapStateToProps, null)(App);

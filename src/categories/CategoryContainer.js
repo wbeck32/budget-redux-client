@@ -1,20 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getMyCats } from './category.actions';
+import Category from './Category';
 
-
-export function CategoryContainer(){
-  CategoryContainer.propTypes = {
-    email: PropTypes.string,
-    password: PropTypes.string,
-    signUp: PropTypes.func
-  };
-
-
-return (<div> CategoryContainer </div>);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ getMyCats }, dispatch);
 }
 
+const mapStateToProps = state => {
+  return {
+    token: state.token,
+    categories: state.categories
+  };
+};
 
-export default connect(state => ({
-
-}))(CategoryContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(Category);

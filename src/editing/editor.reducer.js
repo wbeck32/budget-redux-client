@@ -6,12 +6,12 @@ import {
 } from './editor.constants';
 
 export function editorReducer(state = {}, { type, payload }) {
-  // console.log(state, type, payload);
+  console.log(state, type, payload);
   switch (type) {
     case CREATE_NEW_CAT:
-      // console.log('new cat: ', state.authorized, payload);
-      return payload;
-    case CREATE_NEW_SUBCAT:
+      // console.log('new cat: ', state, payload);
+      return [...state, payload];
+      case CREATE_NEW_SUBCAT:
       // console.log('new subcat: ', state.token, payload);
       return payload;
     case SAVE_CAT_CHANGES:

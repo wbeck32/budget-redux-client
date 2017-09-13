@@ -20,6 +20,7 @@ export function signIn({payload}) {
     return authAPI.signIn({payload})
     .then(
       res => {
+        console.log('signin: ', res)
         dispatch({ type: AUTHORIZED, payload: res.token});
       },
       error => {

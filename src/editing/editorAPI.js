@@ -4,7 +4,7 @@ require('dotenv').config()
 const ME_API_URL = process.env.REACT_APP_ME_API_URL;
 
 export default {
-  createNewCat : async ({payload}) => {
+  createNewCat : async (payload) => {
     const {name, catAmount, catRemaining} = payload;
     return await req.post(`${ME_API_URL}/category`)
     .set('Authorization', store.getState().token)

@@ -14,7 +14,6 @@ AuthContainer.propTypes = {
   signUp: PropTypes.func,
   signIn: PropTypes.func,
   authorized: PropTypes.bool
-
 }
 
 function mapDispatchToProps(dispatch) {
