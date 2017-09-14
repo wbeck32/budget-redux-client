@@ -13,7 +13,7 @@ const AuthContainer = ( {signUp, signIn} ) => (
 AuthContainer.propTypes = {
   signUp: PropTypes.func,
   signIn: PropTypes.func,
-  authorized: PropTypes.bool
+  token: PropTypes.string
 }
 
 function mapDispatchToProps(dispatch) {

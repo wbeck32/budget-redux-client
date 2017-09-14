@@ -7,7 +7,7 @@ export default {
   getMyCats : async () => {
     const myCats = await req.get(`${ME_API_URL}/category`)
     .set('Authorization', store.getState().token)
-    console.log('myCats: ', myCats);
+    console.log('myCats: ', myCats.body.categories);
     return myCats.body.categories;
   }
 }

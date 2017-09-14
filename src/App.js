@@ -12,7 +12,7 @@ import TransactionContainer from './transactions/TransactionContainer';
 class App extends Component {
   static propTypes = {
     token: PropTypes.string,
-    categories: PropTypes.array,
+    categories: PropTypes.object,
     getMyCats: PropTypes.func
   };
 

@@ -5,6 +5,6 @@ import { combineReducers } from 'redux';
 
 export default combineReducers({
   token: authReducer,
-  editorReducer: editorReducer,
-  categoryReducer: categoryReducer
+  category: editorReducer,
+  categories: categoryReducer
 });
