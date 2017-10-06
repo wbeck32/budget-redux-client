@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 export default function Auth({ signUp, signIn }) {
 
   Auth.propTypes = {
-    email: PropTypes.string,
-    password: PropTypes.string,
     signUp: PropTypes.func,
     signIn: PropTypes.func
   };

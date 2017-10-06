@@ -13,7 +13,6 @@ const AuthContainer = ( {signUp, signIn} ) => (
 AuthContainer.propTypes = {
   signUp: PropTypes.func,
   signIn: PropTypes.func,
-  token: PropTypes.string
 }
 
 function mapDispatchToProps(dispatch) {
@@ -21,14 +20,14 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-const mapStateToProps = state => {
-  return {
-    token: state.token
-  }
-};
+// const mapStateToProps = state => {
+//   return {
+//     token: state.token
+//   }
+// };
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(Auth);
 

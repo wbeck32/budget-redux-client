@@ -1,47 +1,33 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
 import { getMyCats } from './category.actions';
+import PropTypes from 'prop-types';
+
 import Category from './Category';
+import { bindActionCreators } from 'redux';
 
-export const CategoryContainer = async (props) => {
-  const myCats = await props.cats();
-  // const myCats = ['ABC', 'NJU'];
-  console.log('myCats: ', myCats, typeof myCats);
-  const myMap = myCats.map((cat, i) => {
-    return <Category key={i} cat={cat} />;
-  });
-
-  return (
-    <div>
-      PROPS
-      {myMap}
-    </div>
-  );
-};
+const CategoryContainer = ({ getMyCats, token }) => <Category />;
 
 CategoryContainer.propTypes = {
   getMyCats: PropTypes.func,
   token: PropTypes.string,
-  categories: PropTypes.object,
-  cats: PropTypes.func
+  categories: PropTypes.object
 };
 
 function mapDispatchToProps(dispatch) {
-  return {
-    cats: () => {
-      dispatch(getMyCats());
-    }
-    // return bindActionCreators({ getMyCats }, dispatch);
-  };
-}
+  return bindActionCreators({ getMyCats }, dispatch);
 
-const mapStateToProps = state => {
+  // return {
+  //   cats: () => {
+  //     dispatch(getMyCats());
+  //   }
+  // };
+}
+function mapStateToProps(state) {
   return {
     token: state.token,
     categories: state.categories
   };
-};
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(CategoryContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(Category);
