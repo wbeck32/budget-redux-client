@@ -12,11 +12,13 @@ export default {
       })
   },
   signIn({payload}) {
+    console.log(99, payload)
     return req
     .post(`${AUTH_API_URL}/signin`)
     .send(payload)
     .then(response => {
-      return response.body
+      console.log(101, response)
+      return response.text
     })
   },
     verify() {

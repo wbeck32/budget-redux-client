@@ -1,4 +1,6 @@
 import { AUTHORIZED, AUTH_FAILURE } from './auth.constants';
+import { GET_MY_CATS } from '../categories/category.constants';
+
 import authAPI from './authAPI';
 
 export function signUp({ payload }) {
@@ -19,7 +21,7 @@ export function signIn({ payload }) {
     return authAPI.signIn({ payload }).then(
       res => {
         console.log('signin: ', res);
-        dispatch({ type: AUTHORIZED, payload: res.token });
+        dispatch({ type: AUTHORIZED, payload: res });
       },
       error => {
         dispatch({ type: AUTH_FAILURE, payload: error.status });
