@@ -4,9 +4,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './App.css';
 // import { Router, Route } from 'react-router';
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 
-import { getMyCats } from './categories/category.actions';
 import AuthContainer from './auth/AuthContainer';
 import CategoryContainer from './categories/CategoryContainer';
 import EditorContainer from './editing/EditorContainer';
@@ -14,9 +13,8 @@ import TransactionContainer from './transactions/TransactionContainer';
 
 class App extends Component {
   static propTypes = {
-    token: PropTypes.string,
-    getMyCats: PropTypes.func
-  };
+    token: PropTypes.string
+    };
 
   render() {
     return (
@@ -53,16 +51,15 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    token: state.token,
-    categories: state.categories
+    token: state.token
   };
 };
-function mapDispatchToProps(dispatch) {
-  // return {
-  //   cats: () => {
-  //     dispatch(getMyCats());
-  //   }
-  // };
-}
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     cats: () => {
+//       dispatch(getMyCats());
+//     }
+//   };
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, null)(App);

@@ -1,28 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getMyCats } from './category.actions';
-import PropTypes from 'prop-types';
-
-import Category from './Category';
 import { bindActionCreators } from 'redux';
+import Category from './Category';
 
-const CategoryContainer = ({ getMyCats, token }) => <Category />;
+export function CategoryContainer({ getMyCats, token }) {
+  console.log(44, getMyCats, token);
+  return getMyCats().then(getMyCats => {
+    console.log(88, getMyCats);
 
-CategoryContainer.propTypes = {
-  getMyCats: PropTypes.func,
-  token: PropTypes.string,
-  categories: PropTypes.object
-};
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getMyCats }, dispatch);
-
-  // return {
-  //   cats: () => {
-  //     dispatch(getMyCats());
-  //   }
-  // };
+    return (
+      <div>
+        {/* <Category/> */}
+        Category
+        {/* <li key={props.key}>
+            <span>{props.cat}</span> */}
+        {/* <span>{props.cat.subCatAmount}</span> */}
+        {/* </li> */}
+      </div>
+    );
+  });
 }
+
 function mapStateToProps(state) {
   return {
     token: state.token,
@@ -30,4 +29,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Category);
+export default connect(mapStateToProps, null)(Category);
