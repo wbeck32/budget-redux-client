@@ -1,6 +1,4 @@
 import { AUTHORIZED, AUTH_FAILURE } from './auth.constants';
-import { GET_MY_CATS } from '../categories/category.constants';
-
 import authAPI from './authAPI';
 
 export function signUp({ payload }) {

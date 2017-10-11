@@ -1,24 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Category() {
-    return (
-      <div>
-        <div className="flexrow">
-          {/* {categories.map(cat => {
-            return (
-              <div key={person._id} className="flexcol">
-                <Card user={person} />
-              </div>
-            );
-          })}
-        </div>
-        <Pagination users={search} /> */}
-     </div> </div>
-    );
-  }
-
-
+export default function Category({ category }) {
+  Category.propTypes = {
+    categories: PropTypes.array
+  };
+  return (
+    <div>
+      <div className="flexrow">
+      {category}
+      </div>
+    </div>
+  );
+}
 
 // const mapStateToProps = state => {
 //   console.log(565656, state)
@@ -28,13 +22,6 @@ export default function Category() {
 // };
 
 // export default connect(mapStateToProps, null)(Category);
-
-
-
-
-
-
-
 
 // export default class Category extends Component {
 //   static propTypes = {
@@ -77,15 +64,15 @@ export default function Category() {
 
 //   }
 
-  // render() {
+// render() {
 
-  //   return (
-  //     <div>
-  //       <div>Category Container</div>
-  //     </div>
-  //   );
+//   return (
+//     <div>
+//       <div>Category Container</div>
+//     </div>
+//   );
 
-  // }
+// }
 
 // export default function Category({getMygetMyCats, token }) {
 // console.log(44, getMyCats, token)

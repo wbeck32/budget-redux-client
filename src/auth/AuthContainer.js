@@ -12,19 +12,12 @@ const AuthContainer = ( {signUp, signIn} ) => (
 
 AuthContainer.propTypes = {
   signUp: PropTypes.func,
-  signIn: PropTypes.func,
+  signIn: PropTypes.func
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ signUp, signIn }, dispatch);
 }
-
-
-// const mapStateToProps = state => {
-//   return {
-//     token: state.token
-//   }
-// };
 
 export default connect(
   null,

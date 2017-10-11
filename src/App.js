@@ -13,7 +13,8 @@ import TransactionContainer from './transactions/TransactionContainer';
 
 class App extends Component {
   static propTypes = {
-    token: PropTypes.string
+    token: PropTypes.string,
+    categories: PropTypes.array
     };
 
   render() {
@@ -51,15 +52,9 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    token: state.token
+    token: state.token,
+    categories: state.categories
   };
 };
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     cats: () => {
-//       dispatch(getMyCats());
-//     }
-//   };
-// }
 
 export default connect(mapStateToProps, null)(App);
