@@ -11,25 +11,25 @@ export class CategoryContainer extends Component {
     categories: PropTypes.array
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      categories: this.props.categories,
-      token: this.props.token
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     categories: this.props.categories,
+  //     token: this.props.token
+  //   };
+  // }
 
-  componentWillMount() {
-    // console.log(555, this);
- this.props.getMyCats()
-  }
+  componentWillMount = (async () => {
+    const allC = await this.props.getMyCats();
+    console.log(22222222, allC)
+  })
 
   render() {
     console.log(666, this.props.categories, typeof this.props.categories);
 
     const { categories } = this.props;
     return (
-      <div className="galleryView">
+      <div>
         {categories.map((cat, i) => (
           <div key={i}>
             <Category category={cat}/>
