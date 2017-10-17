@@ -26,7 +26,7 @@ export class CategoryContainer extends Component {
 
   render() {
     console.log(666, this.props.categories, typeof this.props.categories);
-
+    if (this.props.categories !== null) {
     const { categories } = this.props;
     return (
       <div>
@@ -37,6 +37,9 @@ export class CategoryContainer extends Component {
         ))}
       </div>
     );
+  } else {return (
+    <div>Enter a category to start</div>
+  )}
   }
 }
 
