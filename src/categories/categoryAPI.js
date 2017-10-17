@@ -11,7 +11,7 @@ export default {
       .get(`${ME_API_URL}/category`)
       .set('Authorization', token);
       console.log(55551212, myCats)
-    if (myCats.body.length > 0) return myCats.body.categories;
+    if (myCats.body.length > 0) return myCats.body;
     return null;
   }
 };

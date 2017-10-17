@@ -1,47 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { getMyCats } from './category.actions';
 import Category from './Category';
 import PropTypes from 'prop-types';
 
-export class CategoryContainer extends Component {
-  static propTypes = {
-    getMyCats: PropTypes.func,
-    token: PropTypes.string,
-    categories: PropTypes.array
-  };
+const CategoryContainer = async () => <Category />;
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     categories: this.props.categories,
-  //     token: this.props.token
-  //   };
-  // }
-
-  componentWillMount = (async () => {
-    const allC = await this.props.getMyCats();
-    console.log(22222222, allC)
-  })
-
-  render() {
-    console.log(666, this.props.categories, typeof this.props.categories);
-    if (this.props.categories !== null) {
-    const { categories } = this.props;
-    return (
-      <div>
-        {categories.map((cat, i) => (
-          <div key={i}>
-            <Category category={cat}/>
-          </div>
-        ))}
-      </div>
-    );
-  } else {return (
-    <div>Enter a category to start</div>
-  )}
-  }
-}
+CategoryContainer.propTypes = {
+  getMyCats: PropTypes.func
+};
 
 const mapStateToProps = state => {
   return {
@@ -58,4 +25,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CategoryContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(Category);

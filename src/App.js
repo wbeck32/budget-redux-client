@@ -52,8 +52,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    token: state.token,
-    categories: state.categories
+    token: state.token
   };
 };
 
