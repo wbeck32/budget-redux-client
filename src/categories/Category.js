@@ -20,7 +20,7 @@ export default class Category extends Component {
     return (
       <div>
         {categories.map((cat, i) => {
-          <div index={i}>category: {cat.user}</div>;
+          return (<div key={i}>category: {cat.name}</div>);
         })}
       </div>
     );
