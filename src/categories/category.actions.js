@@ -1,5 +1,5 @@
 import categoryAPI from './categoryAPI';
-import { GET_MY_CATS } from './category.constants';
+import { GET_MY_CATS, CREATE_NEW_CAT } from './category.constants';
 
 export function getMyCats() {
   return function(dispatch) {
@@ -9,4 +9,13 @@ export function getMyCats() {
     });
     }
   };
+
+  export function createNewCat() {
+    return function(dispatch) {
+      return categoryAPI.createNewCat()
+      .then(results => {
+        dispatch({ type: CREATE_NEW_CAT, payload: results })
+      });
+      }
+  }
 

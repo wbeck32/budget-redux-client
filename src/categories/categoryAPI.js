@@ -11,5 +11,14 @@ export default {
       .set('Authorization', token);
     if (myCats.body.length > 0) return myCats.body;
     return null;
+  },
+  createNewCat: async () => {
+    const { token } = store.getState();
+    const newCat = await req
+      .post(`${ME_API_URL}/category`)
+      .set('Authorization', token);
+      console.log(676767, newCat);
+    // if (myCats.body.length > 0) return myCats.body;
+    // return null;
   }
 };
