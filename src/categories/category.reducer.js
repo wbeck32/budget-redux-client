@@ -5,7 +5,7 @@ export default function categoryReducer(state = [], { type, payload }) {
     case GET_MY_CATS:
       return payload;
     case CREATE_NEW_CAT:
-      return payload;
+      return payload.body.categories;
     default:
       return state;
   }

@@ -11,14 +11,12 @@ export default class Category extends Component {
     this.props.getMyCats();
   }
 
-componentDidUpdate() {
-  console.log('componentDidUpdate')
-}
+
 
 
   render() {
     const { categories } = this.props;
-    console.log(78787, categories, typeof categories)
+    console.log(78787, categories)
     if (categories) {
     return (
       <div>

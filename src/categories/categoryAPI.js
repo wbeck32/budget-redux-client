@@ -18,7 +18,7 @@ export default {
       .post(`${ME_API_URL}/category`)
       .set('Authorization', token);
       console.log(676767, newCat);
-    // if (myCats.body.length > 0) return myCats.body;
-    // return null;
+    if (newCat.body.length > 0) return newCat.body;
+    return null;
   }
 };
