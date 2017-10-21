@@ -17,7 +17,6 @@ export default {
     const newCat = await req
       .post(`${ME_API_URL}/category`)
       .set('Authorization', token);
-      console.log(676767, newCat);
     if (newCat.body.length > 0) return newCat.body;
     return null;
   }

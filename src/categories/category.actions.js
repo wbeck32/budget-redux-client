@@ -5,7 +5,6 @@ export function getMyCats() {
   return function(dispatch) {
     return categoryAPI.getMyCats()
     .then(results => {
-      console.log(8787, results, typeof Array.from(results))
       dispatch({ type: GET_MY_CATS, payload: results })
     });
     }

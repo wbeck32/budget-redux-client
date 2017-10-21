@@ -14,11 +14,10 @@ import {
 // ]
 
 export function editorReducer(state = [], { type, payload }) {
-  console.log(989898, state, type, payload, typeof payload);
   switch (type) {
     case CREATE_NEW_CAT:
-      console.log('new cat: ', state, payload, typeof payload);
-      return payload.body.categories;
+      // console.log('new cat: ', state, payload, typeof payload);
+      return payload;
     case CREATE_NEW_SUBCAT:
       // console.log('new subcat: ', state.token, payload);
       return payload;
