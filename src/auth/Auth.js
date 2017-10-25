@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Auth({ signUp, signIn }) {
+export default function Auth({ signUp, signIn, errMsg }) {
 
   Auth.propTypes = {
     signUp: PropTypes.func,
-    signIn: PropTypes.func
+    signIn: PropTypes.func,
+    errMsg: PropTypes.string
   };
 
   return (
@@ -42,6 +43,7 @@ export default function Auth({ signUp, signIn }) {
         <input type="text" name="password" placeholder="password" />
         <button type="submit" name="submit" />
       </form>
+      <div>{}</div>
     </div>
   );
 }

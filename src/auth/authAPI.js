@@ -8,7 +8,8 @@ export default {
       .post(`${AUTH_API_URL}/signup`)
       .send(payload)
       .then(newUser => {
-        return newUser
+        console.log(101, newUser)
+        return newUser.body
       })
   },
   signIn({payload}) {
@@ -16,7 +17,8 @@ export default {
     .post(`${AUTH_API_URL}/signin`)
     .send(payload)
     .then(response => {
-      return response.text
+      console.log(66, response.body)
+      return response.body;
     })
   },
     verify() {

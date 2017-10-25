@@ -6,7 +6,7 @@ import { signUp, signIn } from './auth.actions';
 import Auth from './Auth';
 
 
-const AuthContainer = ( {signUp, signIn} ) => (
+const AuthContainer = ( {signUp, signIn, error} ) => (
   <Auth />
 )
 
@@ -19,8 +19,14 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ signUp, signIn }, dispatch);
 }
 
+const mapStateToProps = state => {
+  return {
+    error: state.error
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Auth);
 
