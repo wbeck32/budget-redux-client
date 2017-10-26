@@ -5,7 +5,7 @@ export default class Category extends Component {
   static propTypes = {
     categories: PropTypes.array,
     getMyCats: PropTypes.func
-  };
+    };
 
   componentWillMount() {
     this.props.getMyCats();

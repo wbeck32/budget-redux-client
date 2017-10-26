@@ -3,7 +3,8 @@ import { GET_MY_CATS, CREATE_NEW_CAT } from './category.constants';
 
 export function getMyCats() {
   return function(dispatch) {
-    return categoryAPI.getMyCats()
+    const token = localStorage.getItem('budget')
+    return categoryAPI.getMyCats().set('Authorization', token)
     .then(results => {
       dispatch({ type: GET_MY_CATS, payload: results })
     });

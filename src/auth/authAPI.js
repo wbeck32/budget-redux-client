@@ -1,5 +1,4 @@
 import req from 'superagent';
-require('dotenv').config()
 const AUTH_API_URL = process.env.REACT_APP_AUTH_API_URL;
 
 export default {
@@ -12,10 +11,11 @@ export default {
         return newUser.body
       })
   },
-  signIn({payload}) {
+  signIn(payload) {
+    console.log(222, payload)
     return req
     .post(`${AUTH_API_URL}/signin`)
-    .send(payload)
+    .send({payload})
     .then(response => {
       console.log(66, response.body)
       return response.body;

@@ -5,7 +5,7 @@ const ME_API_URL = process.env.REACT_APP_ME_API_URL;
 
 export default {
   getMyCats: async () => {
-    const { token } = store.getState();
+    const { token } = localStorage.getItem('budget')
     const myCats = await req
       .get(`${ME_API_URL}/category`)
       .set('Authorization', token);
