@@ -10,13 +10,13 @@ export function getMyCats() {
     }
   };
 
-  export function createNewCat() {
-    return function(dispatch) {
-      // console.log(3)
-      return categoryAPI.createNewCat()
-      .then(results => { console.log(4, results)
-        dispatch({ type: CREATE_NEW_CAT, payload: results })
-      });
-      }
-  }
+  // export function createNewCat() {
+  //   return function(dispatch) {
+  //     // console.log(3)
+  //     return categoryAPI.createNewCat()
+  //     .then(results => { console.log(4, results)
+  //       dispatch({ type: CREATE_NEW_CAT, payload: results })
+  //     });
+  //     }
+  // }
 

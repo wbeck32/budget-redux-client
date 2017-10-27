@@ -5,18 +5,10 @@ import {
   SAVE_SUBCAT_CHANGES
 } from './editor.constants';
 
-// return [
-//   ...state,
-//   {
-//     text: action.text,
-//     completed: false
-//   }
-// ]
-
 export function editorReducer(state = [], { type, payload }) {
   switch (type) {
     case CREATE_NEW_CAT:
-      // console.log('new cat: ', state, payload, typeof payload);
+      console.log('new cat: ', type, payload, typeof payload);
       return payload;
     case CREATE_NEW_SUBCAT:
       // console.log('new subcat: ', state.token, payload);

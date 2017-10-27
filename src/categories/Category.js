@@ -12,7 +12,7 @@ export default class Category extends Component {
   }
 
   render() {
-    // console.log(676767, this.props)
+    console.log(676767, this.props)
     const { categories } = this.props;
     if (categories) {
       return (
