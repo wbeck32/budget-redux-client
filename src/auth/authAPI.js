@@ -7,17 +7,17 @@ export default {
       .post(`${AUTH_API_URL}/signup`)
       .send(payload)
       .then(newUser => {
-        console.log(101, newUser)
+        // console.log(101, newUser)
         return newUser.body
       })
   },
   signIn(payload) {
-    console.log(222, payload)
+    // console.log(222, payload)
     return req
     .post(`${AUTH_API_URL}/signin`)
-    .send({payload})
+    .send(payload)
     .then(response => {
-      console.log(66, response.body)
+      // console.log(66, response.body)
       return response.body;
     })
   },

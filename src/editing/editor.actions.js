@@ -5,11 +5,14 @@ import {GET_MY_CATS} from '../categories/category.constants';
 
 export function createNewCat(payload) {
   return function(dispatch) {
+    // console.log(888, payload)
     return editorAPI
       .createNewCat(payload)
       .then(res => {
-        dispatch({type: CREATE_NEW_CAT, payload: res.body})
-        dispatch({type: GET_MY_CATS, payload: res.body})
+        // console.log(8888, res)
+        dispatch({type: CREATE_NEW_CAT, payload: res})
+        dispatch({type: GET_MY_CATS, payload: res})
+
   })
   }
 }
