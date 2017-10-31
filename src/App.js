@@ -35,7 +35,7 @@ class App extends Component {
           {this.props.token && (
             <div>
               {' '}
-              <CategoryContainer />
+              {<CategoryContainer />}
             </div>
           )}
           {this.props.token && (

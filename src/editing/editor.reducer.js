@@ -7,13 +7,11 @@ import {
 } from './editor.constants';
 
 export function editorReducer(state = [], { type, payload }) {
-  console.log(8787878, state, type, payload)
 
   switch (type) {
     case GET_MY_CATS:
-    return payload;
+      return payload;
     case CREATE_NEW_CAT:
-      console.log('new cat: ', type, payload, typeof payload);
       return payload;
     case CREATE_NEW_SUBCAT:
       // console.log('new subcat: ', state.token, payload);

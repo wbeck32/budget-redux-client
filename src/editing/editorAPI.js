@@ -17,7 +17,6 @@ export default {
     const myCats = await req
       .get(`${ME_API_URL}/category`)
       .set('Authorization', token);
-      console.log(999, myCats.body.length)
     if (myCats.body.length > 0) return myCats.body;
     return null;
   }

@@ -3,16 +3,11 @@ import PropTypes from 'prop-types';
 
 export default class Category extends Component {
   static propTypes = {
-    categories: PropTypes.array,
-    getMyCats: PropTypes.func
+    categories: PropTypes.array
     };
 
-  componentWillMount() {
-    // this.props.getMyCats();
-  }
 
   render() {
-    console.log(676767, this.props)
     const { categories } = this.props;
     if (categories) {
       return (

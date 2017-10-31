@@ -6,7 +6,6 @@ import {
 } from './auth.constants';
 
 export default function authReducer(state = null, { type, payload }) {
-  console.log(1,state, type, payload);
   switch (type) {
     case SIGN_IN:
       return null;
