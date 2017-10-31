@@ -4,12 +4,14 @@ import {
   createNewCat,
   createNewSubcat,
   saveCatChanges,
-  saveSubcatChanges
+  saveSubcatChanges,
+  getMyCats
 } from './editor.actions';
 import Editor from './Editor';
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ createNewCat, createNewSubcat, saveCatChanges, saveSubcatChanges }, dispatch);
+  return bindActionCreators({ createNewCat, createNewSubcat, saveCatChanges, saveSubcatChanges, getMyCats }, dispatch);
+
 }
 
 const mapStateToProps = state => {

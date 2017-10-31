@@ -8,7 +8,7 @@ export default class Category extends Component {
     };
 
   componentWillMount() {
-    this.props.getMyCats();
+    // this.props.getMyCats();
   }
 
   render() {

@@ -1,5 +1,5 @@
 import editorAPI from './editorAPI';
-import { CREATE_NEW_CAT} from './editor.constants.js';
+import { CREATE_NEW_CAT, GET_MY_CATS} from './editor.constants.js';
 // import {GET_MY_CATS} from '../categories/category.constants';
 
 
@@ -14,6 +14,16 @@ export function createNewCat(payload) {
   })
   }
 }
+export function getMyCats() {
+  return function(dispatch) {
+    return editorAPI.getMyCats()
+    .then(results => {
+      dispatch({ type: GET_MY_CATS, payload: results })
+    });
+    }
+  };
+
+
 
 export function createNewSubcat({ type, payload }) {}
 

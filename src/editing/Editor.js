@@ -7,7 +7,13 @@ export default class Editor extends Component {
     saveCatChanges: PropTypes.func,
     saveSubcatChanges: PropTypes.func,
     createNewCat: PropTypes.func,
-    createNewSubcat: PropTypes.func
+    createNewSubcat: PropTypes.func,
+    getMyCats: PropTypes.func
+    }
+
+
+    componentWillMount() {
+      this.props.getMyCats();
     }
 
 

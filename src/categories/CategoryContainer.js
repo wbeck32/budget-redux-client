@@ -18,11 +18,11 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
-    getMyCats: () => {
-      dispatch(getMyCats());
-    }
-  };
+  // return {
+  //   getMyCats: () => {
+  //     dispatch(getMyCats());
+  //   }
+  // };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Category);
+export default connect(mapStateToProps, null)(Category);
