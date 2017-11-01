@@ -1,5 +1,6 @@
 import editorAPI from './editorAPI';
 import { CREATE_NEW_CAT, GET_MY_CATS} from './editor.constants.js';
+import { SIGN_OUT } from '../auth/auth.constants'
 
 
 export function createNewCat(payload) {
@@ -18,7 +19,13 @@ export function getMyCats() {
       dispatch({ type: GET_MY_CATS, payload: results })
     });
     }
-  };
+  }
+  export function signOut() {
+    return function(dispatch) {
+      localStorage.removeItem('budget');
+      dispatch({ type: SIGN_OUT, payload: null });
+    };
+  }
 
 
 

@@ -5,18 +5,20 @@ import {
   createNewSubcat,
   saveCatChanges,
   saveSubcatChanges,
-  getMyCats
+  getMyCats,
+  signOut
 } from './editor.actions';
 import Editor from './Editor';
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ createNewCat, createNewSubcat, saveCatChanges, saveSubcatChanges, getMyCats }, dispatch);
+  return bindActionCreators({ createNewCat, createNewSubcat, saveCatChanges, saveSubcatChanges, getMyCats, signOut }, dispatch);
 
 }
 
 const mapStateToProps = state => {
   return {
-    categories: state.categories
+    categories: state.categories,
+    token: state.token
   };
 };
 

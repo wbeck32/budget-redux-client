@@ -21,6 +21,8 @@ export function signIn({ payload }) {
   return function(dispatch) {
     return authAPI.signIn( payload ).then(
       res => {
+        const { token } = res;
+        localStorage.setItem('budget', token);
         dispatch({ type: AUTHORIZED, payload: res.token });
       },
       error => {

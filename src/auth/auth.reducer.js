@@ -2,7 +2,8 @@ import {
   SIGN_UP,
   SIGN_IN,
   AUTHORIZED,
-  AUTH_FAILURE
+  AUTH_FAILURE,
+  SIGN_OUT
 } from './auth.constants';
 
 export default function authReducer(state = null, { type, payload }) {
@@ -11,6 +12,8 @@ export default function authReducer(state = null, { type, payload }) {
       return null;
     case SIGN_UP:
       return payload;
+      case SIGN_OUT:
+      return null;
     case AUTHORIZED:
       return payload;
     case AUTH_FAILURE:
