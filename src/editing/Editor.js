@@ -15,42 +15,42 @@ export default class Editor extends Component {
   componentWillMount() {
     this.props.getMyCats();
   }
-  handleClick() {
-    localStorage.removeItem('budget');
-  }
 
   render() {
-    return (
-      <div>
-        <div>
-          <button onClick={this.handleClick}>Log out</button>
-        </div>
+    const { signOut, token } = this.props;
+    if (token) {
+      return (
         <div>
           <div>
-            Create new category
-            <form
-              onSubmit={event => {
-                event.preventDefault();
-                const form = event.target;
-                const { name, catAmount } = form.elements;
-                this.props.createNewCat({
-                  name: name.value,
-                  catAmount: catAmount.value,
-                  catRemaining: catAmount.value
-                });
-                form.reset();
-              }}>
-              <input type="text" name="name" placeholder="name" />
-              <input
-                type="text"
-                name="catAmount"
-                placeholder="amount budgeted for this category"
-              />
-              <button type="submit" name="submit" />
-            </form>
+            <button onClick={signOut}>Log out</button>
+          </div>
+          <div>
+            <div>
+              Create new category
+              <form
+                onSubmit={event => {
+                  event.preventDefault();
+                  const form = event.target;
+                  const { name, catAmount } = form.elements;
+                  this.props.createNewCat({
+                    name: name.value,
+                    catAmount: catAmount.value,
+                    catRemaining: catAmount.value
+                  });
+                  form.reset();
+                }}>
+                <input type="text" name="name" placeholder="name" />
+                <input
+                  type="text"
+                  name="catAmount"
+                  placeholder="amount budgeted for this category"
+                />
+                <button type="submit" name="submit" />
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
